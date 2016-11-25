@@ -142,4 +142,7 @@ app.use(cloudcmd({
     }
 }));
 
-server.listen(PORT);
+server.listen(PORT, function() {
+    console.log('url: http://localhost:' + PORT);
+});
+
