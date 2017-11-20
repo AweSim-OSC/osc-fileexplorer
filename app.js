@@ -14,6 +14,8 @@ var http        = require('http'),
     dirArray    = __dirname.split('/'),
     PORT        = 9001,
     PREFIX      = '',
+    treeroot,
+    treeroottitle,
     server,
     socket;
 
@@ -64,6 +66,16 @@ app.get(BASE_URI + CloudFunc.apiURL + CloudFunc.FS + ':path(*)', function(req, r
     } else {
         next();
     }
+});
+
+// Set the treeroot var if query param available
+app.use(function (req, res, next) {
+     if (req.query.treeroot) {
+         treeroot = req.query.treeroot;
+         next();
+     } else {
+         next();
+     }
 });
 
 // Custom middleware to zip and send a directory to a browser.
@@ -133,8 +145,9 @@ app.use(cloudcmd({
         // each app instance have a separate treeroot
         // treeroot: "/nfs/gpfs/PZS0530",
         // treeroottitle: "Project Space"
-        treeroot:               HOME,
-        treeroottitle:          "Home Directory",
+        home_dir:               HOME,
+        treeroot:               treeroot || HOME,
+        treeroottitle:          treeroottitle || "Home Directory",
         upload_max:             process.env.FILE_UPLOAD_MAX || 10485760000,
         file_editor:            process.env.OOD_FILE_EDITOR || '/pun/sys/file-editor/edit',
         shell:                  process.env.OOD_SHELL || '/pun/sys/shell/ssh/default',
