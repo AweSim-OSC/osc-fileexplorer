@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+
+- Add global configuration file `/etc/ood/config/apps/files/env/` for
+  production mode.
+- Add local configuration file `.env.local` for development mode.
+- Deprecate previous `.env` file.
+
 ## v1.3.6 - 2017-10-24
 
 - update to osc/cloudcmd v5.3.1-osc.29
