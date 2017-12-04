@@ -135,12 +135,11 @@ app.use(cloudcmd({
         showKeysPanel: false,         /* disable the buttons at the bottom of the view            */
         root: '/',                    /* set the root path. change to HOME to use homedir         */
         prefix: BASE_URI,             /* base URL or function which returns base URL (optional)   */
-
-        //TODO: could we set this using get params? or post params for when you first "create a session" ?
-        //FIXME: try setting this with get params - or something that will make
-        // each app instance have a separate treeroot
-        // treeroot: "/nfs/gpfs/PZS0530",
-        // treeroottitle: "Project Space"
+        //  Values configured in this block are static and cannot be changed dynamically once the process is launched.
+        // treeroot and treeroottitle are used to set the default values for the file directory tree.
+        // Examples:
+        //    treeroot: "/nfs/gpfs/PZS0530",
+        //    treeroottitle: "Project Space"
         home_dir:               HOME,
         treeroot:               HOME,
         treeroottitle:          "Home Directory",
