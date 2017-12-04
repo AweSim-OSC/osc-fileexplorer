@@ -69,7 +69,10 @@ app.get(BASE_URI + CloudFunc.apiURL + CloudFunc.FS + ':path(*)', function(req, r
 // Set the treeroot var if query param available
 app.use(function (req, res, next) {
     if (req.query.treeroot && req.query.treeroot !== "") {
-        process.env.TREEROOT = req.query.treeroot;
+        // Checking the filesystem is expensive, so only do it when the query param is set
+        if (fs.existsSync(req.query.treeroot)) {
+            process.env.TREEROOT = req.query.treeroot;
+        }
     }
     next();
 });
