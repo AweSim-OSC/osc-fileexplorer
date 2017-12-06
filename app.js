@@ -19,11 +19,11 @@ var http        = require('http'),
     socket;
 
 // Read in environment variables
+dotenv.config({path: '.env.local'});
 if (process.env.NODE_ENV === 'production') {
   dotenv.config({path: '/etc/ood/config/apps/files/env'});
-} else {
-  dotenv.config({path: '.env.local'});
 }
+
 // Keep app backwards compatible
 if (fs.existsSync('.env')) {
   console.warn('[DEPRECATION] The file \'.env\' is being deprecated. Please move this file to \'/etc/ood/config/apps/files/env\'.');
