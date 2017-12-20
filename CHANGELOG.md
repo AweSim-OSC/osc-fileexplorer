@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   production mode.
 - Add local configuration file `.env.local`.
 - Deprecate previous `.env` file.
+- Fix crash when the git folder is not present
 
 ## v1.3.6 - 2017-10-24
 
