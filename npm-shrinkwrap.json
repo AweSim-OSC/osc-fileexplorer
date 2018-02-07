@@ -271,7 +271,7 @@
     "cloudcmd": {
       "version": "5.3.1",
       "from": "git://github.com/OSC/cloudcmd.git#roottree",
-      "resolved": "git://github.com/OSC/cloudcmd.git#2ff7a93f1107821c1ad02099f028a4b3905f0d42",
+      "resolved": "git://github.com/OSC/cloudcmd.git#eff7d8af16207d2310ab648b0bf8141321563469",
       "dependencies": {
         "chalk": {
           "version": "1.1.3",
