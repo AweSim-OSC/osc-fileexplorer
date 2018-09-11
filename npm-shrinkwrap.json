@@ -270,7 +270,7 @@
     },
     "cloudcmd": {
       "version": "5.3.1",
-      "from": "git://github.com/OSC/cloudcmd.git#v5.3.1-osc.29",
+      "from": "git://github.com/OSC/cloudcmd.git#b19f86a972e4c127bdec3a4a50c939eb7d7b645b",
       "resolved": "git://github.com/OSC/cloudcmd.git#b19f86a972e4c127bdec3a4a50c939eb7d7b645b",
       "dependencies": {
         "chalk": {
@@ -4089,7 +4089,7 @@
     },
     "dotenv": {
       "version": "4.0.0",
-      "from": "dotenv@4.0.0",
+      "from": "https://registry.npmjs.org/dotenv/-/dotenv-4.0.0.tgz",
       "resolved": "https://registry.npmjs.org/dotenv/-/dotenv-4.0.0.tgz"
     },
     "express": {
@@ -4512,6 +4512,11 @@
           }
         }
       }
+    },
+    "lodash": {
+      "version": "4.17.10",
+      "from": "lodash@latest",
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.10.tgz"
     },
     "os-homedir": {
       "version": "1.0.2",

@@ -11,6 +11,8 @@ var http        = require('http'),
     queryString = require('querystring'),
     gitSync     = require('git-rev-sync'),
     dotenv      = require('dotenv'),
+    _           = require('lodash'),
+    util        = require('util'),
     app         = express(),
     dirArray    = __dirname.split('/'),
     PORT        = 9001,
@@ -36,6 +38,36 @@ server = http.createServer(app);
 // Set up the socket
 socket = io.listen(server, {
     path: BASE_URI + '/socket.io'
+});
+
+//FIXME: this addresses initial requests, but not the ajax requests; those need to be caught as well...
+//FIXME: doesn't address requests to root / either (maybe first whitelisted path?)
+app.use(function (req, res, next) {
+    var filepath = (function(req){
+        var paramURL    = queryString.unescape(req.url);
+        // FIXME: '/fs' is a hack
+        // req.??? provides base_uri or something?
+        return paramURL.replace(BASE_URI + '/fs', '')
+    })(req);
+
+    var whitelist_paths_contain = (function(filepath){
+        var whitelist = process.env.WHITELIST ? process.env.WHITELIST.split(":") : [];
+        // FIXME: the problem with this is the whitelist needs to address all the forms
+        // of the URI :-(
+        return whitelist.count == 0 || whitelist.filter(function(whitelisted_path){
+            // path.relative will contain "/../" if not in the whitelisted path
+            return ! _.includes(path.relative(whitelisted_path, path.normalize(filepath)).split(path.sep), "..")
+        }).length > 0;
+    });
+
+    if((! _.startsWith(queryString.unescape(req.url), BASE_URI + '/fs')) || whitelist_paths_contain(filepath)){
+        next();
+    }
+    else{
+        // forbidden
+        // res.status(403).send("Not allowed to access. req" + util.inspect(req)).end();
+        res.status(403).send("Not allowed to access").end();
+    }
 });
 
 // Disable browser-side caching of assets by injecting expiry headers into all requests
