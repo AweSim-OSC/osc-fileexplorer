@@ -1,3 +1,5 @@
+## Moved to https://github.com/OSC/ondemand/tree/master/apps/files
+
 # OOD File Explorer
 
 [![GitHub version](https://badge.fury.io/gh/OSC%2Food-fileexplorer.svg)](https://badge.fury.io/gh/OSC%2Food-fileexplorer)
