@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.6.4] - 2020-08-18
+### Fixed
+- Backport from 1.8 dependency updates and switch to handlebars for security fixes
+
 ## [1.6.3] - 2019-09-24
 ### Fixed
 - Fix copy issues on Lustre by upgrading CloudCmd dependency findit to
@@ -139,7 +143,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial Release!
 
-[Unreleased]: https://github.com/OSC/ood-fileexplorer/compare/v1.6.3...HEAD
+[Unreleased]: https://github.com/OSC/ood-fileexplorer/compare/v1.6.4...HEAD
+[1.6.4]: https://github.com/OSC/ood-fileexplorer/compare/v1.6.3...v1.6.4
 [1.6.3]: https://github.com/OSC/ood-fileexplorer/compare/v1.6.2...v1.6.3
 [1.6.2]: https://github.com/OSC/ood-fileexplorer/compare/v1.6.1...v1.6.2
 [1.6.1]: https://github.com/OSC/ood-fileexplorer/compare/v1.6.0...v1.6.1
