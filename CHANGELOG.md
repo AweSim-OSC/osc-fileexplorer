@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.6.5] - 2020-09-02
+### Security
+- Backport from 1.8 files app security fix for XSS in Go To Directory dialog
+
 ## [1.6.4] - 2020-08-18
 ### Fixed
 - Backport from 1.8 dependency updates and switch to handlebars for security fixes
@@ -143,7 +147,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial Release!
 
-[Unreleased]: https://github.com/OSC/ood-fileexplorer/compare/v1.6.4...HEAD
+[Unreleased]: https://github.com/OSC/ood-fileexplorer/compare/v1.6.5...HEAD
+[1.6.5]: https://github.com/OSC/ood-fileexplorer/compare/v1.6.4...v1.6.5
 [1.6.4]: https://github.com/OSC/ood-fileexplorer/compare/v1.6.3...v1.6.4
 [1.6.3]: https://github.com/OSC/ood-fileexplorer/compare/v1.6.2...v1.6.3
 [1.6.2]: https://github.com/OSC/ood-fileexplorer/compare/v1.6.1...v1.6.2
