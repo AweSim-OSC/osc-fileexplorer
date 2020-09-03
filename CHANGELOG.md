@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.6.6] - 2020-09-02
+### Security
+- Update buffer list dependency (bl) by forcing a version of tar-stream.
+  The Files interface does not use this code, but the cloudcmd server portion
+  may expose a route that does.
+
 ## [1.6.5] - 2020-09-02
 ### Security
 - Backport from 1.8 files app security fix for XSS in Go To Directory dialog
@@ -147,7 +153,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial Release!
 
-[Unreleased]: https://github.com/OSC/ood-fileexplorer/compare/v1.6.5...HEAD
+[Unreleased]: https://github.com/OSC/ood-fileexplorer/compare/v1.6.6...HEAD
+[1.6.6]: https://github.com/OSC/ood-fileexplorer/compare/v1.6.5...v1.6.6
 [1.6.5]: https://github.com/OSC/ood-fileexplorer/compare/v1.6.4...v1.6.5
 [1.6.4]: https://github.com/OSC/ood-fileexplorer/compare/v1.6.3...v1.6.4
 [1.6.3]: https://github.com/OSC/ood-fileexplorer/compare/v1.6.2...v1.6.3
